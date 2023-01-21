@@ -1,0 +1,34 @@
+.button{
+    margin-right: 300px;
+    margin-block-end: 50px;
+    justify-content: right;
+    display: flex;
+}
+.table,th,td{
+border: 1px solid black;
+}
+.tabla1{
+    justify-content: center;
+    margin-right: 300px;
+    margin-left: 300px;
+}
+
+.trash{
+    margin-right: 5px;
+    color: red;
+    padding: 1px 20px;
+}
+.pencil{
+    margin-right: -45px;
+    color: green;
+    padding: 1px 20px;
+}
+.filtros{
+    padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+
+

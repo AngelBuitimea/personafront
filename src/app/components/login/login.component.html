@@ -1,0 +1,32 @@
+<body>
+  
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+          <img class="logo" src="https://svgshare.com/i/pfa.svg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="personaForm" >
+        <div class="textos">Username</div> 
+        <input type="text" formControlName="email" placeholder="Username">
+        <div class="textos">Password</div> 
+        <input type="password" formControlName="password" placeholder="Password">
+        <div><input type="checkbox" > <label for="a"> Remember me </label>  <a class="info" href="">ⓘ</a>  </div>
+        
+        <input type="submit" class="fadeIn fourth" value="Iniciar Sesión"[disabled]="personaForm.invalid" (click)="navegar()" routerLink="/usuario" >
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">FORGOT PASSWORD?</a>
+      </div>
+  
+    </div>
+  </div>
+  </body>
+  <nav></nav>
