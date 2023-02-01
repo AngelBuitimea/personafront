@@ -43,6 +43,7 @@ export class UsuarioComponent implements OnInit {
   rolActual=this.personaList.rol;
   revelarSuper=false;
   constraseña=this.personaList.password;
+  rolValue:string;
   
   constructor(
     public fb: FormBuilder,
