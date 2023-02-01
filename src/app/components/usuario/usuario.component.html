@@ -99,7 +99,7 @@
                                     <label>Numero de Telefono 1</label>
                                     <input type="text" formControlName="numero1" class="form-control">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" >
                                     <label>Numero de Telefono 2</label>
                                     <input type="text" formControlName="numero2" class="form-control">
                                 </div>
@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="form-group" *ngIf="revelarSuper">
                                     <label>Rol</label>
-                                    <select formControlName="rol">
+                                    <select formControlName="rol" class="form-control">
                                         <option [(ngModel)]="rolValue">Super Administrador</option>
                                         <option [(ngModel)]="rolValue">Administrador</option>
                                         <option [(ngModel)]="rolValue">Empleado</option>
