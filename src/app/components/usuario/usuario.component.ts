@@ -28,7 +28,7 @@ export class UsuarioComponent implements OnInit {
       numero2: '',
       genero: '',
       password:'',
-      rol:''
+      rol:'Super Administrador'
   };
 
   personaForm: FormGroup;

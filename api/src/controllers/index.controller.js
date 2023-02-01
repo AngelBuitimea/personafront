@@ -1,5 +1,4 @@
 const { Pool } = require('pg');
-const User = require('../Model/User');
 const jwt = require('jsonwebtoken');
 
 

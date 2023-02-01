@@ -1,3 +1,156 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <div class="row">
+		<div class="left ">
+        <ul>
+            
+                <li class="item-menu">
+                    <span class="glyphicon glyphicon-home"></span> 
+                    <span class="menu">Home</span>
+                </li>
+           
+            <a href="usuario">
+                <li class="item-menu">
+                    <span class="glyphicon glyphicon-user"></span> 
+                    <span class="menu">Usuarios</span>
+                </li>
+            </a>
+            <a href="#">
+                <li class="item-menu">
+                    <span class="glyphicon glyphicon-briefcase"></span> 
+                    <span class="menu">Empleados</span>
+                </li>
+            </a>    
+            <a href="#">
+                <li class="item-menu">
+                    <label class="icologout"><span class="glyphicon glyphicon-log-out"></span> </label>
+                    <span class="logout">Salir</span>
+                </li>
+            </a>  
+            
+            <li class="item-menu"> 
+                 <span class="glyphicon glyphicon-search" ></span> <label class="espacio"> </label>
+                 <input class="t_search" type="text" placeholder="Buscar...">
+            </li>
+        </ul>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Datos
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>  
+                    <div class="modal-body">
+                        <div>
+                            <div>
+                                
+                            </div>
+                            <form [formGroup]="personaForm" (ngSubmit)="confirmModal()">
+                                <div class="form-group">
+                                    <label>ID Empleado</label>
+                                    <input type="text" formControlName="id" readonly class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" formControlName="nombre"  class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido Paterno</label>
+                                    <input type="text" formControlName="apellidoPaterno" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido Materno</label>
+                                    <input type="text" formControlName="apellidoMaterno" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Puesto</label>
+                                    <input type="text" formControlName="puesto" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>RFC</label>
+                                    <input type="text" formControlName="rfc" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Dirección</label>
+                                    <input type="text" formControlName="direccion" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo Electrónico</label>
+                                    <input type="text" formControlName="correoElectronico" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cuenta Github</label>
+                                    <input type="text" formControlName="cuentaGithub" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <input type="text" formControlName="estado" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <input type="text" formControlName="ciudad" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero de Telefono 1</label>
+                                    <input type="text" formControlName="numero1" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero de Telefono 2</label>
+                                    <input type="text" formControlName="numero2" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <input type="text" formControlName="password" class="form-control">
+                                </div>
+                                <div class="form-group" *ngIf="revelarSuper">
+                                    <label>Rol</label>
+                                    <input type="text" formControlName="rol" class="form-control">
+                                </div>
+    
+    
+                                <div class="form-group">
+                                    <label>Genero</label>
+                                </div>
+                                <div class="form-group">
+    
+                                    <input type=radio id="radio1"  name="radio" value="Femenino" formControlName="genero" (click)="show=true" [(ngModel)]="value">
+          
+                                    <label for="hombre">Femenino</label>
+                                    <br>
+                                    <input type=radio id="radio2"  name="radio" value="Masculino" formControlName="genero" (click)="show=true" [(ngModel)]="value">
+                                    <label for="mujer">Masculino</label>
+                                    <br>
+                                    <input type=radio id="radio3" name="radio" formControlName="genero" (click)="!show=false" [(ngModel)]="value">
+                                    <label for="otro">Otro</label>
+                                    <br>
+                                    <div class="form-group"  *ngIf="!show">
+                                        <input type="text" id="inputgenero" formControlName="genero" class="form-control" placeholder="Especifique">
+                                    </div>
+                                    <br>
+                                </div>
+    
+    
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  [disabled]="personaForm.invalid">Guardar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div> <!-- end left -->
+    <body>
+        
+    </body>
+    </div>
+
+
 <div class="formulario" style="padding:5%;">
     <div>
         
@@ -7,114 +160,7 @@
         <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" (click)="agregar()">Agregar</button>
       </div>
       
-      <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    Datos
-                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                </div>  
-                <div class="modal-body">
-                    <div>
-                        <div>
-                            
-                        </div>
-                        <form [formGroup]="personaForm" (ngSubmit)="confirmModal()">
-                            <div class="form-group">
-                                <label>ID Empleado</label>
-                                <input type="text" formControlName="id" readonly class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" formControlName="nombre"  class="form-control" >
-                            </div>
-                            <div class="form-group">
-                                <label>Apellido Paterno</label>
-                                <input type="text" formControlName="apellidoPaterno" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Apellido Materno</label>
-                                <input type="text" formControlName="apellidoMaterno" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Puesto</label>
-                                <input type="text" formControlName="puesto" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>RFC</label>
-                                <input type="text" formControlName="rfc" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Dirección</label>
-                                <input type="text" formControlName="direccion" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Correo Electrónico</label>
-                                <input type="text" formControlName="correoElectronico" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Cuenta Github</label>
-                                <input type="text" formControlName="cuentaGithub" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Estado</label>
-                                <input type="text" formControlName="estado" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Ciudad</label>
-                                <input type="text" formControlName="ciudad" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Numero de Telefono 1</label>
-                                <input type="text" formControlName="numero1" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Numero de Telefono 2</label>
-                                <input type="text" formControlName="numero2" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Contraseña</label>
-                                <input type="text" formControlName="password" class="form-control">
-                            </div>
-                            <div class="form-group" *ngIf="revelarSuper">
-                                <label>Rol</label>
-                                <input type="text" formControlName="rol" class="form-control">
-                            </div>
-
-
-                            <div class="form-group">
-                                <label>Genero</label>
-                            </div>
-                            <div class="form-group">
-
-                                <input type=radio id="radio1"  name="radio" value="Femenino" formControlName="genero" (click)="show=true" [(ngModel)]="value">
       
-                                <label for="hombre">Femenino</label>
-                                <br>
-                                <input type=radio id="radio2"  name="radio" value="Masculino" formControlName="genero" (click)="show=true" [(ngModel)]="value">
-                                <label for="mujer">Masculino</label>
-                                <br>
-                                <input type=radio id="radio3" name="radio" formControlName="genero" (click)="!show=false" [(ngModel)]="value">
-                                <label for="otro">Otro</label>
-                                <br>
-                                <div class="form-group"  *ngIf="!show">
-                                    <input type="text" id="inputgenero" formControlName="genero" class="form-control" placeholder="Especifique">
-                                </div>
-                                <br>
-                            </div>
-
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
-                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  [disabled]="personaForm.invalid">Guardar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
       
     
       <div class="tabla1">
