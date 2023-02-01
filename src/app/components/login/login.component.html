@@ -7,18 +7,18 @@
   
       <!-- Icon -->
       <div class="fadeIn first">
-          <img class="logo" src="https://svgshare.com/i/pfa.svg" id="icon" alt="User Icon" />
+        <img class="logo" src="https://svgshare.com/i/pfa.svg" id="icon" alt="User Icon" />
       </div>
   
       <!-- Login Form -->
       <form [formGroup]="personaForm" >
         <div class="textos">Username</div> 
-        <input type="text" formControlName="email" placeholder="Username">
+        <input type="text" formControlName="email" placeholder="Username" [ngModel]="email">
         <div class="textos">Password</div> 
-        <input type="password" formControlName="password" placeholder="Password">
+        <input type="password" formControlName="password" placeholder="Password" [ngModel]="password">
         <div><input type="checkbox" > <label for="a"> Remember me </label>  <a class="info" href="">ⓘ</a>  </div>
         
-        <input type="submit" class="fadeIn fourth" value="Iniciar Sesión"[disabled]="personaForm.invalid" (click)="navegar()" routerLink="/usuario" >
+        <input type="submit" class="fadeIn fourth" value="Iniciar Sesión"[disabled]="personaForm.invalid"  (click)="navegar()" routerLink="/home" >
       </form>
   
       <!-- Remind Passowrd -->

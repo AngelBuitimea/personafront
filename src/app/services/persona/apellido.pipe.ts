@@ -9,7 +9,7 @@ export class ApellidoPipe implements PipeTransform {
     if(filterApellido === '' || filterApellido === undefined) {
       return value;
     }
-    return value.filter(getAllPersonas => getAllPersonas.apellido.toLowerCase().indexOf(filterApellido) != -1)
+    return value.filter(getAllPersonas => getAllPersonas.apellidoPaterno.toLowerCase().indexOf(filterApellido) != -1)
   }
    
 }

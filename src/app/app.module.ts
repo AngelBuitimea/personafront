@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { GeneroPipe } from './services/persona/genero.pipe';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     GeneroPipe,
     UsuarioComponent,
     LoginComponent,
-    FormularioComponent
+    FormularioComponent,
+    HomeComponent,
   ],
   imports: [ 
     BrowserModule,
